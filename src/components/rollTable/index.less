@@ -1,0 +1,86 @@
+@marginsHorizontal: 1.7rem;
+@marginsTop: 2.4rem;
+
+.rollTable {
+  margin: 1rem -@marginsHorizontal 0;
+  position: relative;
+  flex: 1;
+  cursor: default;
+}
+
+.rollTableLine {
+  display: flex;
+  position: relative;
+
+  .column {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.headerRow {
+  background-color: rgba(@geekblue-10, 10%);
+  padding: 0.5rem @marginsHorizontal;
+  margin-top: 0.4rem;
+  color: @blue-9;
+  font-size: 0.7rem;
+}
+
+@keyframes rollRow {
+  0% {
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.rollTableBody {
+  position: absolute;
+  width: 100%;
+  top: @marginsTop;
+  bottom: 0;
+  overflow: hidden;
+
+  .bodyContent {
+    animation: rollRow 10s linear infinite;
+    animation-play-state: paused;
+
+    .bodyRow {
+      padding: 0.5rem @marginsHorizontal;
+      font-size: 0.95rem;
+
+      .sign {
+        position: absolute;
+        left: 0.64rem;
+        top: 0.4rem;
+        opacity: 0;
+      }
+
+      &:hover {
+        color: @blue-9;
+        background-color: rgba(@geekblue-10, 10%);
+
+        .sign {
+          opacity: 1;
+        }
+      }
+
+      &.text-1 {
+        background-color: rgba(22,233,151,19%);
+        color: @green-6;
+      }
+
+      &.text-2 {
+        background-color: rgba(@yellow-7, 20%);
+        color: @yellow-10;
+      }
+
+      &.text-3 {
+        background-color: rgba(@red-8, 20%);
+        color: @red-8;
+      }
+    }
+  }
+}

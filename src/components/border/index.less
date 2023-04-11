@@ -1,0 +1,28 @@
+@top: 2.125rem;
+@right: 1.583rem;
+@bottom: 0.875rem;
+@left: 5.5rem;
+.border {
+  box-sizing: border-box;
+  border-width: @top @right @bottom @left;
+  border-style: solid;
+  border-image: url(~@/assets/images/background/border.png) 36 38 14.5 72;
+  position: relative;
+}
+
+.inner {
+  position: absolute;
+  top: -@top;
+  right: -@right;
+  bottom: -@bottom;
+  left: -@left;
+  padding: 1.3rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: @text-color;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
